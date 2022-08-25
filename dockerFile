@@ -1,0 +1,15 @@
+FROM bkci
+
+RUN  wget https://studygolang.com/dl/golang/go1.17.8.linux-amd64.tar.gz \
+	&& tar -C /usr/local -xzf go1.17.8.linux-amd64.tar.gz
+
+
+env GOROOT=/usr/local/go
+
+env GOPATH=/go
+
+env PATH=$PATH:$GOROOT/bin
+
+env TZ=Asia/Shanghai
+
+RUN go env
